@@ -26,4 +26,12 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)buttonWasPressed:(id)sender {
+    if ([textLabel.text isEqualToString:@"iOS assignment 1"]) {
+        textLabel.text = @"Text Changed!";
+    } else {
+        textLabel.text = @"iOS assignment 1";
+    }
+
+}
 @end
