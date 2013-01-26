@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  ChildViewController.h
 //  HW2
 //
 //  Created by Kraig McKernan on 1/26/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ChildViewController : UIViewController
 
 @end

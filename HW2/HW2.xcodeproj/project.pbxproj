@@ -17,12 +17,14 @@
 		4CE9539416B4863000AB72D9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9539316B4863000AB72D9 /* Default@2x.png */; };
 		4CE9539616B4863000AB72D9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9539516B4863000AB72D9 /* Default-568h@2x.png */; };
 		4CE9539916B4863100AB72D9 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CE9539716B4863100AB72D9 /* MainStoryboard.storyboard */; };
-		4CE9539C16B4863100AB72D9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE9539B16B4863100AB72D9 /* ViewController.m */; };
 		4CE953A416B4863100AB72D9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE953A316B4863100AB72D9 /* SenTestingKit.framework */; };
 		4CE953A516B4863100AB72D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE9537F16B4863000AB72D9 /* UIKit.framework */; };
 		4CE953A616B4863100AB72D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE9538116B4863000AB72D9 /* Foundation.framework */; };
 		4CE953AE16B4863100AB72D9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CE953AC16B4863100AB72D9 /* InfoPlist.strings */; };
 		4CE953B116B4863100AB72D9 /* HW2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CE953B016B4863100AB72D9 /* HW2Tests.m */; };
+		4CF5D51816B4886C0029A887 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5D51716B4886C0029A887 /* MainViewController.m */; };
+		4CF5D51B16B4888D0029A887 /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5D51A16B4888D0029A887 /* ChildViewController.m */; };
+		4CF5D51C16B48AEB0029A887 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CF5D51716B4886C0029A887 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,14 +52,16 @@
 		4CE9539316B4863000AB72D9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4CE9539516B4863000AB72D9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4CE9539816B4863100AB72D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		4CE9539A16B4863100AB72D9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4CE9539B16B4863100AB72D9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		4CE953A216B4863100AB72D9 /* HW2Tests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HW2Tests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE953A316B4863100AB72D9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4CE953AB16B4863100AB72D9 /* HW2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HW2Tests-Info.plist"; sourceTree = "<group>"; };
 		4CE953AD16B4863100AB72D9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CE953AF16B4863100AB72D9 /* HW2Tests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HW2Tests.h; sourceTree = "<group>"; };
 		4CE953B016B4863100AB72D9 /* HW2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HW2Tests.m; sourceTree = "<group>"; };
+		4CF5D51616B4886C0029A887 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		4CF5D51716B4886C0029A887 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		4CF5D51916B4888D0029A887 /* ChildViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildViewController.h; sourceTree = "<group>"; };
+		4CF5D51A16B4888D0029A887 /* ChildViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,9 +123,11 @@
 			children = (
 				4CE9538E16B4863000AB72D9 /* AppDelegate.h */,
 				4CE9538F16B4863000AB72D9 /* AppDelegate.m */,
+				4CF5D51616B4886C0029A887 /* MainViewController.h */,
+				4CF5D51716B4886C0029A887 /* MainViewController.m */,
+				4CF5D51916B4888D0029A887 /* ChildViewController.h */,
+				4CF5D51A16B4888D0029A887 /* ChildViewController.m */,
 				4CE9539716B4863100AB72D9 /* MainStoryboard.storyboard */,
-				4CE9539A16B4863100AB72D9 /* ViewController.h */,
-				4CE9539B16B4863100AB72D9 /* ViewController.m */,
 				4CE9538616B4863000AB72D9 /* Supporting Files */,
 			);
 			path = HW2;
@@ -272,7 +278,8 @@
 			files = (
 				4CE9538C16B4863000AB72D9 /* main.m in Sources */,
 				4CE9539016B4863000AB72D9 /* AppDelegate.m in Sources */,
-				4CE9539C16B4863100AB72D9 /* ViewController.m in Sources */,
+				4CF5D51B16B4888D0029A887 /* ChildViewController.m in Sources */,
+				4CF5D51C16B48AEB0029A887 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4CE953B116B4863100AB72D9 /* HW2Tests.m in Sources */,
+				4CF5D51816B4886C0029A887 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,6 +455,7 @@
 				4CE953B616B4863100AB72D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CE953B716B4863100AB72D9 /* Build configuration list for PBXNativeTarget "HW2Tests" */ = {
 			isa = XCConfigurationList;
@@ -455,6 +464,7 @@
 				4CE953B916B4863100AB72D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
