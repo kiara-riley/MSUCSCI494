@@ -8,9 +8,7 @@
 
 #import "SubView.h"
 
-@interface SubView () {
-    NSInteger pattern; //the pattern number
-}
+@interface SubView ()
 
 @end
 
@@ -21,7 +19,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        [self setPatternWithNumber:1];
+        [self setBackgroundColor:[UIColor blackColor]];
     }
     return self;
 }
@@ -30,7 +28,6 @@
     //Code for storyboard initiated views
     self = [super initWithCoder:aDecoder];
     if (self) {
-        [self setPatternWithNumber:0];
     }
     return self;
 }
@@ -42,8 +39,8 @@
 {
     // Drawing code
     [[UIColor whiteColor] setStroke];
-    if (pattern == 0){
-        [self setBackgroundColor:[UIColor blackColor]];
+    if ([self pattern] == 0){
+        
         for (int j = 0; j < 5; j++) {
             for (int i = 0; i < 5; i++) {
                 UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(i*30, j*30, 30, 30)];
@@ -51,7 +48,7 @@
                 [path stroke];
             }
         }
-    } else if (pattern == 1){
+    } else if ([self pattern] == 1){
         UIBezierPath *path = [UIBezierPath bezierPath];
         [path moveToPoint:CGPointMake(0, 0)];
         [path addLineToPoint:CGPointMake(20, 20)];
@@ -66,7 +63,7 @@
         [path moveToPoint:CGPointMake(80, 20)];
         [path addLineToPoint:CGPointMake(80, 80)];
         [path stroke];
-    } else if (pattern == 2) {
+    } else if ([self pattern] == 2) {
         UIBezierPath *path = [UIBezierPath bezierPath];
         [path moveToPoint:CGPointMake(0, 20)];
         [path addLineToPoint:CGPointMake(0, 80)];
@@ -83,8 +80,8 @@
 
 
 
--(void)setPatternWithNumber:(NSInteger)number {
-    pattern = number;
+-(void)setPattern:(NSInteger)pattern {
+    _pattern = pattern;
     [self setNeedsDisplay];
 }
 

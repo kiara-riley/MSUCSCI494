@@ -10,6 +10,6 @@
 
 @interface SubView : UIView
 
--(void)setPatternWithNumber:(NSInteger)number;
+@property (nonatomic) NSInteger pattern;
 
 @end

@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 
 @interface ChildViewController : UIViewController
+
 - (IBAction)buttonWasPressed:(id)sender;
+
+-(void)changePatterns;
 
 @end
