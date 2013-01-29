@@ -34,6 +34,7 @@
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
     UIViewController *child = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ChildViewController"];
+    //[self addChildViewController:child];
     [self presentViewController:child animated:YES completion:nil];
 }
 

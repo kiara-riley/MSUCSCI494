@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4CCF95C816B5E75A0006135C /* SubView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CCF95C716B5E75A0006135C /* SubView.m */; };
 		4CE9538016B4863000AB72D9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE9537F16B4863000AB72D9 /* UIKit.framework */; };
 		4CE9538216B4863000AB72D9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE9538116B4863000AB72D9 /* Foundation.framework */; };
 		4CE9538416B4863000AB72D9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE9538316B4863000AB72D9 /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4CCF95C616B5E75A0006135C /* SubView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SubView.h; sourceTree = "<group>"; };
+		4CCF95C716B5E75A0006135C /* SubView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SubView.m; sourceTree = "<group>"; };
 		4CE9537B16B4863000AB72D9 /* HW2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CE9537F16B4863000AB72D9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4CE9538116B4863000AB72D9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -128,6 +131,8 @@
 				4CF5D51916B4888D0029A887 /* ChildViewController.h */,
 				4CF5D51A16B4888D0029A887 /* ChildViewController.m */,
 				4CE9539716B4863100AB72D9 /* MainStoryboard.storyboard */,
+				4CCF95C616B5E75A0006135C /* SubView.h */,
+				4CCF95C716B5E75A0006135C /* SubView.m */,
 				4CE9538616B4863000AB72D9 /* Supporting Files */,
 			);
 			path = HW2;
@@ -280,6 +285,7 @@
 				4CE9539016B4863000AB72D9 /* AppDelegate.m in Sources */,
 				4CF5D51B16B4888D0029A887 /* ChildViewController.m in Sources */,
 				4CF5D51C16B48AEB0029A887 /* MainViewController.m in Sources */,
+				4CCF95C816B5E75A0006135C /* SubView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

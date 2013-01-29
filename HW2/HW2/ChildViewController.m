@@ -7,8 +7,13 @@
 //
 
 #import "ChildViewController.h"
+#import "SubView.h"
 
-@interface ChildViewController ()
+@interface ChildViewController () {
+    SubView *view1;
+    SubView *view2;
+    SubView *view3;
+}
 
 @end
 
@@ -27,6 +32,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
+    
+    view1 = [[SubView alloc] initWithFrame:CGRectMake(0, 20, 100, 100)];
+    view2 = [[SubView alloc] initWithFrame:CGRectMake(110, 20, 100, 100)];
+    view3 = [[SubView alloc] initWithFrame:CGRectMake(220, 20, 100, 100)];
+    
+    [[self view] addSubview:view1];
+    
+    
+    [[self view] addSubview:view2];
+    
+
+    [[self view] addSubview:view3];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,4 +54,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)buttonWasPressed:(id)sender {
+    [view1 setPatternWithNumber:2];
+    
+}
 @end
