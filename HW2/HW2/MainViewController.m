@@ -33,9 +33,9 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    UIViewController *child = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ChildViewController"];
+    UIViewController *child = [[UIStoryboard storyboardWithName:@"MainStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"ChildViewController"]; //creates the childviewcontroller programatically
     
-    [self presentViewController:child animated:YES completion:nil];
+    [self presentViewController:child animated:YES completion:nil]; //presents the child viewcontroller immediately with an animation (can see this vc for a tiny bit before the child fills the screen)
 }
 
 - (void)didReceiveMemoryWarning

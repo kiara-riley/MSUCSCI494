@@ -42,13 +42,13 @@
     if ([self pattern] == 0){
         
         for (int j = 0; j < 5; j++) {
-            for (int i = 0; i < 5; i++) {
-                UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(i*30, j*30, 30, 30)];
+            for (int i = 0; i < 5; i++) { //not really "efficient" but it works pretty fast still
+                UIBezierPath *path = [UIBezierPath bezierPathWithOvalInRect:CGRectMake(i*20, j*20, 20, 20)];
                 path.lineWidth = 1.5;
                 [path stroke];
             }
         }
-    } else if ([self pattern] == 1){
+    } else if ([self pattern] == 1){ // makes a square thingy
         UIBezierPath *path = [UIBezierPath bezierPath];
         [path moveToPoint:CGPointMake(0, 0)];
         [path addLineToPoint:CGPointMake(20, 20)];
@@ -63,7 +63,7 @@
         [path moveToPoint:CGPointMake(80, 20)];
         [path addLineToPoint:CGPointMake(80, 80)];
         [path stroke];
-    } else if ([self pattern] == 2) {
+    } else if ([self pattern] == 2) { // makes a rounded rectangle
         UIBezierPath *path = [UIBezierPath bezierPath];
         [path moveToPoint:CGPointMake(0, 20)];
         [path addLineToPoint:CGPointMake(0, 80)];
@@ -80,9 +80,9 @@
 
 
 
--(void)setPattern:(NSInteger)pattern {
+-(void)setPattern:(NSInteger)pattern { // overide the property method
     _pattern = pattern;
-    [self setNeedsDisplay];
+    [self setNeedsDisplay]; //need to redraw or nothing happens
 }
 
 

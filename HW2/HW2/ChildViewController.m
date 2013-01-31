@@ -10,7 +10,7 @@
 #import "SubView.h"
 
 @interface ChildViewController () {
-    SubView *view1;
+    SubView *view1; //local class variables, no need to set them as properties
     SubView *view2;
     SubView *view3;
 }
@@ -33,7 +33,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    view1 = [[SubView alloc] initWithFrame:CGRectMake(0, 20, 100, 100)];
+    view1 = [[SubView alloc] initWithFrame:CGRectMake(0, 20, 100, 100)];//initializing and adding all three subviews(happens before the vc is even on screen)
     [view1 setPattern:0];
     view2 = [[SubView alloc] initWithFrame:CGRectMake(110, 20, 100, 100)];
     [view2 setPattern:1];
@@ -58,12 +58,12 @@
 }
 
 - (IBAction)buttonWasPressed:(id)sender {
-    [self changePatterns];
+    [self changePatterns]; //button pressed so change the views
     
 }
 
 -(void)changePatterns {
-    [view1 setPattern:([view1 pattern]+1)%3];
+    [view1 setPattern:([view1 pattern]+1)%3];//add one to each views pattern and modulo by 3 to keep it between 1 and 3
     [view2 setPattern:([view2 pattern]+1)%3];
     [view3 setPattern:([view3 pattern]+1)%3];
 
