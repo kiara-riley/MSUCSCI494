@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Kraig McKernan. All rights reserved.
 //
 
+// 100%
+
 #import "MainViewController.h"
 
 @interface MainViewController ()
