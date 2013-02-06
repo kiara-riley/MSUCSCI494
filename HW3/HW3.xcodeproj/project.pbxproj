@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C6DA48F16C2B9580085C35D /* ButtonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6DA48E16C2B9580085C35D /* ButtonViewController.m */; };
+		4C6DA49216C2BFD60085C35D /* NavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C6DA49116C2BFD60085C35D /* NavViewController.m */; };
 		4CDD35F516C168D400B30815 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDD35F416C168D400B30815 /* UIKit.framework */; };
 		4CDD35F716C168D400B30815 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDD35F616C168D400B30815 /* Foundation.framework */; };
 		4CDD35F916C168D400B30815 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CDD35F816C168D400B30815 /* CoreGraphics.framework */; };
@@ -37,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C6DA48D16C2B9580085C35D /* ButtonViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ButtonViewController.h; sourceTree = "<group>"; };
+		4C6DA48E16C2B9580085C35D /* ButtonViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ButtonViewController.m; sourceTree = "<group>"; };
+		4C6DA49016C2BFD60085C35D /* NavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavViewController.h; sourceTree = "<group>"; };
+		4C6DA49116C2BFD60085C35D /* NavViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavViewController.m; sourceTree = "<group>"; };
 		4CDD35F116C168D400B30815 /* HW3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HW3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CDD35F416C168D400B30815 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4CDD35F616C168D400B30815 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,6 +129,10 @@
 				4CDD360316C168D400B30815 /* AppDelegate.h */,
 				4CDD360416C168D400B30815 /* AppDelegate.m */,
 				4CDD360C16C168D400B30815 /* MainStoryboard.storyboard */,
+				4C6DA49016C2BFD60085C35D /* NavViewController.h */,
+				4C6DA49116C2BFD60085C35D /* NavViewController.m */,
+				4C6DA48D16C2B9580085C35D /* ButtonViewController.h */,
+				4C6DA48E16C2B9580085C35D /* ButtonViewController.m */,
 				4CDD360F16C168D400B30815 /* MasterViewController.h */,
 				4CDD361016C168D400B30815 /* MasterViewController.m */,
 				4CDD361216C168D400B30815 /* DetailViewController.h */,
@@ -279,6 +289,8 @@
 				4CDD360516C168D400B30815 /* AppDelegate.m in Sources */,
 				4CDD361116C168D400B30815 /* MasterViewController.m in Sources */,
 				4CDD361416C168D400B30815 /* DetailViewController.m in Sources */,
+				4C6DA48F16C2B9580085C35D /* ButtonViewController.m in Sources */,
+				4C6DA49216C2BFD60085C35D /* NavViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,6 +473,7 @@
 				4CDD362E16C168D400B30815 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CDD362F16C168D400B30815 /* Build configuration list for PBXNativeTarget "HW3Tests" */ = {
 			isa = XCConfigurationList;
@@ -469,6 +482,7 @@
 				4CDD363116C168D400B30815 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
