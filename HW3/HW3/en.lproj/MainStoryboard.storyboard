@@ -256,11 +256,20 @@
                                     <segue destination="qCa-5b-pki" kind="push" id="dmG-DT-kGA"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="I come from the tab bar or the &quot;View with Navigation&quot; Button" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="235" translatesAutoresizingMaskIntoConstraints="NO" id="p4H-6o-p9y">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="I come from the tab bar or the &quot;View with Navigation&quot; Button" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="229" translatesAutoresizingMaskIntoConstraints="NO" id="p4H-6o-p9y">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="235" id="WK7-2h-7fK"/>
-                                    <constraint firstAttribute="height" constant="166" id="eZO-0i-FfJ"/>
+                                    <constraint firstAttribute="height" constant="80" id="wXG-2K-iwG"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Currently, you picked to see me from a:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eMD-xR-Fsf">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSW-B3-ZCY">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -268,16 +277,23 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="hSW-B3-ZCY" firstAttribute="centerX" secondItem="eMD-xR-Fsf" secondAttribute="centerX" type="default" id="8D3-1S-xcl"/>
                             <constraint firstItem="p4H-6o-p9y" firstAttribute="top" secondItem="fyJ-Cl-wu4" secondAttribute="top" constant="265" id="8hm-PC-d8E"/>
+                            <constraint firstAttribute="bottom" secondItem="eMD-xR-Fsf" secondAttribute="bottom" constant="261" id="CO3-LW-fgQ"/>
                             <constraint firstItem="Lef-v0-qQ1" firstAttribute="top" secondItem="fyJ-Cl-wu4" secondAttribute="top" constant="201" id="XA3-a3-H0I"/>
                             <constraint firstAttribute="trailing" secondItem="Lef-v0-qQ1" secondAttribute="trailing" constant="227" id="gv0-kA-DI8"/>
+                            <constraint firstItem="eMD-xR-Fsf" firstAttribute="leading" secondItem="fyJ-Cl-wu4" secondAttribute="leading" constant="58" id="lfF-oq-7bR"/>
+                            <constraint firstAttribute="bottom" secondItem="hSW-B3-ZCY" secondAttribute="bottom" constant="221" id="qc7-zB-r3e"/>
                             <constraint firstItem="jyL-Q0-MlS" firstAttribute="leading" secondItem="Lef-v0-qQ1" secondAttribute="leading" type="default" id="skC-BD-QHQ"/>
                             <constraint firstItem="p4H-6o-p9y" firstAttribute="leading" secondItem="fyJ-Cl-wu4" secondAttribute="leading" constant="83" id="taz-Zp-GBz"/>
-                            <constraint firstItem="jyL-Q0-MlS" firstAttribute="top" secondItem="fyJ-Cl-wu4" secondAttribute="top" constant="302" id="ytf-yO-uuP"/>
+                            <constraint firstItem="jyL-Q0-MlS" firstAttribute="bottom" secondItem="p4H-6o-p9y" secondAttribute="bottom" type="default" id="vkw-VL-b1f"/>
                         </constraints>
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <navigationItem key="navigationItem" title="NavBar ViewController" id="JIR-tu-7yj"/>
+                    <connections>
+                        <outlet property="parentLabel" destination="hSW-B3-ZCY" id="kqy-lj-5gl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y8O-nm-Sb4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -471,7 +487,7 @@
         <scene sceneID="23J-fW-Qi5">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="8ol-vF-jZ8" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="HXy-aB-ZAU">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>

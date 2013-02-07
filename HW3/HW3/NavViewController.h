@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface NavViewController : UIViewController
+@interface NavViewController : UIViewController {
+    
+    __weak IBOutlet UILabel *parentLabel;
+}
 
 @end

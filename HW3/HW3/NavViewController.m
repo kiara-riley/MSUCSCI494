@@ -27,7 +27,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    [self parentViewController] ; //check what the parent is
+    [parentLabel setText:[[[[self parentViewController] parentViewController] class] description]]; //check what the parent is
     
 }
 
