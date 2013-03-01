@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C18412716E05DAF007C5EA0 /* HW5ShowDataViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C18412616E05DAF007C5EA0 /* HW5ShowDataViewController.m */; };
 		4C5B9D3E16DD2E8B00A635A6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5B9D3D16DD2E8B00A635A6 /* UIKit.framework */; };
 		4C5B9D4016DD2E8B00A635A6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5B9D3F16DD2E8B00A635A6 /* Foundation.framework */; };
 		4C5B9D4216DD2E8B00A635A6 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C5B9D4116DD2E8B00A635A6 /* CoreGraphics.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C18412516E05DAF007C5EA0 /* HW5ShowDataViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HW5ShowDataViewController.h; sourceTree = "<group>"; };
+		4C18412616E05DAF007C5EA0 /* HW5ShowDataViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HW5ShowDataViewController.m; sourceTree = "<group>"; };
 		4C5B9D3A16DD2E8B00A635A6 /* HW5 Weather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HW5 Weather.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C5B9D3D16DD2E8B00A635A6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4C5B9D3F16DD2E8B00A635A6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,8 @@
 				4C5B9D4C16DD2E8B00A635A6 /* HW5AppDelegate.h */,
 				4C5B9D4D16DD2E8B00A635A6 /* HW5AppDelegate.m */,
 				4C5B9D5516DD2E8B00A635A6 /* MainStoryboard.storyboard */,
+				4C18412516E05DAF007C5EA0 /* HW5ShowDataViewController.h */,
+				4C18412616E05DAF007C5EA0 /* HW5ShowDataViewController.m */,
 				4C5B9D5816DD2E8B00A635A6 /* HW5ViewController.h */,
 				4C5B9D5916DD2E8B00A635A6 /* HW5ViewController.m */,
 				4C5B9D4416DD2E8B00A635A6 /* Supporting Files */,
@@ -274,6 +279,7 @@
 				4C5B9D4A16DD2E8B00A635A6 /* main.m in Sources */,
 				4C5B9D4E16DD2E8B00A635A6 /* HW5AppDelegate.m in Sources */,
 				4C5B9D5A16DD2E8B00A635A6 /* HW5ViewController.m in Sources */,
+				4C18412716E05DAF007C5EA0 /* HW5ShowDataViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +460,7 @@
 				4C5B9D7416DD2E8B00A635A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4C5B9D7516DD2E8B00A635A6 /* Build configuration list for PBXNativeTarget "HW5 WeatherTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +469,7 @@
 				4C5B9D7716DD2E8B00A635A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
