@@ -1,5 +1,5 @@
 //
-//  HW5ViewController.h
+//  KMCollectionCell.h
 //  WeatherApp_iPhone
 //
 //  Created by Kraig McKernan on 3/18/13.
@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface HW5ViewController : UIViewController
+@interface KMCollectionCell : UICollectionViewCell {
+    __weak IBOutlet UILabel *textLabel;
+}
+
+@property (weak, nonatomic) NSString *text;
 
 @end

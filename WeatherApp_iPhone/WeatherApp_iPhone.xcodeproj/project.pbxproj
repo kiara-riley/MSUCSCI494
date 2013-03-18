@@ -17,12 +17,14 @@
 		4CD11A5E16F7A15000FC5FB4 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD11A5D16F7A15000FC5FB4 /* Default@2x.png */; };
 		4CD11A6016F7A15000FC5FB4 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4CD11A5F16F7A15000FC5FB4 /* Default-568h@2x.png */; };
 		4CD11A6316F7A15000FC5FB4 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4CD11A6116F7A15000FC5FB4 /* MainStoryboard.storyboard */; };
-		4CD11A6616F7A15000FC5FB4 /* HW5ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD11A6516F7A15000FC5FB4 /* HW5ViewController.m */; };
 		4CD11A6E16F7A15000FC5FB4 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD11A6D16F7A15000FC5FB4 /* SenTestingKit.framework */; };
 		4CD11A6F16F7A15000FC5FB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD11A4916F7A15000FC5FB4 /* UIKit.framework */; };
 		4CD11A7016F7A15000FC5FB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD11A4B16F7A15000FC5FB4 /* Foundation.framework */; };
 		4CD11A7816F7A15000FC5FB4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4CD11A7616F7A15000FC5FB4 /* InfoPlist.strings */; };
 		4CD11A7B16F7A15000FC5FB4 /* WeatherApp_iPhoneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD11A7A16F7A15000FC5FB4 /* WeatherApp_iPhoneTests.m */; };
+		4CD11A8916F7A3D600FC5FB4 /* KMMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD11A8816F7A3D600FC5FB4 /* KMMainVC.m */; };
+		4CD11BA616F7A51000FC5FB4 /* sun.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4CD11BA516F7A51000FC5FB4 /* sun.jpg */; };
+		4CD11BA916F7A7B800FC5FB4 /* KMCollectionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4CD11BA816F7A7B800FC5FB4 /* KMCollectionCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,14 +52,17 @@
 		4CD11A5D16F7A15000FC5FB4 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		4CD11A5F16F7A15000FC5FB4 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		4CD11A6216F7A15000FC5FB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		4CD11A6416F7A15000FC5FB4 /* HW5ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HW5ViewController.h; sourceTree = "<group>"; };
-		4CD11A6516F7A15000FC5FB4 /* HW5ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HW5ViewController.m; sourceTree = "<group>"; };
 		4CD11A6C16F7A15000FC5FB4 /* WeatherApp_iPhoneTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherApp_iPhoneTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD11A6D16F7A15000FC5FB4 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		4CD11A7516F7A15000FC5FB4 /* WeatherApp_iPhoneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "WeatherApp_iPhoneTests-Info.plist"; sourceTree = "<group>"; };
 		4CD11A7716F7A15000FC5FB4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4CD11A7916F7A15000FC5FB4 /* WeatherApp_iPhoneTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherApp_iPhoneTests.h; sourceTree = "<group>"; };
 		4CD11A7A16F7A15000FC5FB4 /* WeatherApp_iPhoneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeatherApp_iPhoneTests.m; sourceTree = "<group>"; };
+		4CD11A8716F7A3D600FC5FB4 /* KMMainVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMMainVC.h; sourceTree = "<group>"; };
+		4CD11A8816F7A3D600FC5FB4 /* KMMainVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMMainVC.m; sourceTree = "<group>"; };
+		4CD11BA516F7A51000FC5FB4 /* sun.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = sun.jpg; sourceTree = "<group>"; };
+		4CD11BA716F7A7B800FC5FB4 /* KMCollectionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMCollectionCell.h; sourceTree = "<group>"; };
+		4CD11BA816F7A7B800FC5FB4 /* KMCollectionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMCollectionCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,8 +125,10 @@
 				4CD11A5816F7A15000FC5FB4 /* HW5AppDelegate.h */,
 				4CD11A5916F7A15000FC5FB4 /* HW5AppDelegate.m */,
 				4CD11A6116F7A15000FC5FB4 /* MainStoryboard.storyboard */,
-				4CD11A6416F7A15000FC5FB4 /* HW5ViewController.h */,
-				4CD11A6516F7A15000FC5FB4 /* HW5ViewController.m */,
+				4CD11A8716F7A3D600FC5FB4 /* KMMainVC.h */,
+				4CD11A8816F7A3D600FC5FB4 /* KMMainVC.m */,
+				4CD11BA716F7A7B800FC5FB4 /* KMCollectionCell.h */,
+				4CD11BA816F7A7B800FC5FB4 /* KMCollectionCell.m */,
 				4CD11A5016F7A15000FC5FB4 /* Supporting Files */,
 			);
 			path = WeatherApp_iPhone;
@@ -130,6 +137,7 @@
 		4CD11A5016F7A15000FC5FB4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4CD11BA516F7A51000FC5FB4 /* sun.jpg */,
 				4CD11A5116F7A15000FC5FB4 /* WeatherApp_iPhone-Info.plist */,
 				4CD11A5216F7A15000FC5FB4 /* InfoPlist.strings */,
 				4CD11A5516F7A15000FC5FB4 /* main.m */,
@@ -237,6 +245,7 @@
 				4CD11A5E16F7A15000FC5FB4 /* Default@2x.png in Resources */,
 				4CD11A6016F7A15000FC5FB4 /* Default-568h@2x.png in Resources */,
 				4CD11A6316F7A15000FC5FB4 /* MainStoryboard.storyboard in Resources */,
+				4CD11BA616F7A51000FC5FB4 /* sun.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,7 +282,8 @@
 			files = (
 				4CD11A5616F7A15000FC5FB4 /* main.m in Sources */,
 				4CD11A5A16F7A15000FC5FB4 /* HW5AppDelegate.m in Sources */,
-				4CD11A6616F7A15000FC5FB4 /* HW5ViewController.m in Sources */,
+				4CD11A8916F7A3D600FC5FB4 /* KMMainVC.m in Sources */,
+				4CD11BA916F7A7B800FC5FB4 /* KMCollectionCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,6 +464,7 @@
 				4CD11A8016F7A15000FC5FB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4CD11A8116F7A15000FC5FB4 /* Build configuration list for PBXNativeTarget "WeatherApp_iPhoneTests" */ = {
 			isa = XCConfigurationList;
@@ -462,6 +473,7 @@
 				4CD11A8316F7A15000FC5FB4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
