@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Kraig McKernan. All rights reserved.
 //
 
+// Good job, 100%.
+
 #import "KMViewController.h"
 
 @interface KMViewController () {

@@ -6,6 +6,8 @@
 //  Copyright (c) 2013 Kraig McKernan. All rights reserved.
 //
 
+// Very nice, 100%.
+
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
