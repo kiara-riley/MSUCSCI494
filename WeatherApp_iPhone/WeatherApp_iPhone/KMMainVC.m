@@ -8,6 +8,7 @@
 
 #import "KMMainVC.h"
 #import "KMCollectionCell.h"
+#import "KMWeather.h"
 
 @interface KMMainVC ()
 
@@ -26,6 +27,10 @@
     [midTempLabel setText:@"32*F"];
     [lowTempLabel setText:@"28"];
     [highTempLabel setText:@"36"];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(weatherRefreshed:) name:@"weatherRefreshed" object:nil];
+    weather = [[KMWeather alloc] init];
+
     
 }
 
@@ -51,5 +56,9 @@
     
 }
 
+-(void)weatherRefreshed:(NSNotification*)note {
+        [midTempLabel setText:[NSString stringWithFormat:@"%f", [weather tempForDate:[NSDate dateWithTimeIntervalSinceNow:0]]]];
+    NSLog(@"%f", [weather snow]);
+}
 
 @end

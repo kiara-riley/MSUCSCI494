@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0D39341700A3CD00A7EA19 /* KMWeather.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C0D39331700A3CD00A7EA19 /* KMWeather.m */; };
 		4CD11A4A16F7A15000FC5FB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD11A4916F7A15000FC5FB4 /* UIKit.framework */; };
 		4CD11A4C16F7A15000FC5FB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD11A4B16F7A15000FC5FB4 /* Foundation.framework */; };
 		4CD11A4E16F7A15000FC5FB4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD11A4D16F7A15000FC5FB4 /* CoreGraphics.framework */; };
@@ -38,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4C0D39321700A3CD00A7EA19 /* KMWeather.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KMWeather.h; sourceTree = "<group>"; };
+		4C0D39331700A3CD00A7EA19 /* KMWeather.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KMWeather.m; sourceTree = "<group>"; };
 		4CD11A4616F7A15000FC5FB4 /* WeatherApp_iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp_iPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD11A4916F7A15000FC5FB4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4CD11A4B16F7A15000FC5FB4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -127,6 +130,8 @@
 				4CD11A6116F7A15000FC5FB4 /* MainStoryboard.storyboard */,
 				4CD11A8716F7A3D600FC5FB4 /* KMMainVC.h */,
 				4CD11A8816F7A3D600FC5FB4 /* KMMainVC.m */,
+				4C0D39321700A3CD00A7EA19 /* KMWeather.h */,
+				4C0D39331700A3CD00A7EA19 /* KMWeather.m */,
 				4CD11BA716F7A7B800FC5FB4 /* KMCollectionCell.h */,
 				4CD11BA816F7A7B800FC5FB4 /* KMCollectionCell.m */,
 				4CD11A5016F7A15000FC5FB4 /* Supporting Files */,
@@ -284,6 +289,7 @@
 				4CD11A5A16F7A15000FC5FB4 /* HW5AppDelegate.m in Sources */,
 				4CD11A8916F7A3D600FC5FB4 /* KMMainVC.m in Sources */,
 				4CD11BA916F7A7B800FC5FB4 /* KMCollectionCell.m in Sources */,
+				4C0D39341700A3CD00A7EA19 /* KMWeather.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

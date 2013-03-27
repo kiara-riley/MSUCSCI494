@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@class KMWeather;
 
 @interface KMMainVC : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     
@@ -15,6 +16,9 @@
     __weak IBOutlet UILabel *midTempLabel;
     __weak IBOutlet UILabel *highTempLabel;
     __weak IBOutlet UILabel *lowTempLabel;
+    KMWeather *weather;
 }
+
+-(void)weatherRefreshed:(NSNotification*)note;
 
 @end
