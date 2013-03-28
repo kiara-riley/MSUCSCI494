@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -52,8 +52,8 @@
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtC-RN-szt">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="CrI-Ie-Gpn"/>
-                                    <constraint firstAttribute="width" constant="128" id="fMb-zd-m1n"/>
+                                    <constraint firstAttribute="height" constant="128" id="ADF-7x-eFI"/>
+                                    <constraint firstAttribute="width" constant="128" id="sg9-jg-Vpl"/>
                                 </constraints>
                             </imageView>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4FI-kD-XxN">
@@ -101,7 +101,6 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="dtC-RN-szt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="9mn-ux-fdc"/>
                             <constraint firstItem="4FI-kD-XxN" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="EDE-ZG-jIL"/>
                             <constraint firstItem="I0H-AY-w61" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="JPJ-Pk-s3z"/>
                             <constraint firstItem="kFQ-t6-VpN" firstAttribute="baseline" secondItem="eod-lx-QIG" secondAttribute="baseline" type="default" id="NQ8-Wv-oQ6"/>
@@ -120,6 +119,7 @@
                             <constraint firstItem="4FI-kD-XxN" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="oeE-Rw-knT"/>
                             <constraint firstItem="I0H-AY-w61" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="oxi-WC-Voj"/>
                             <constraint firstItem="Esl-vm-e0Z" firstAttribute="leading" secondItem="cry-cA-KDb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="tfu-bx-FbX"/>
+                            <constraint firstAttribute="trailing" secondItem="dtC-RN-szt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="vQX-lJ-2Eo"/>
                             <constraint firstItem="gvJ-JO-8j3" firstAttribute="leading" secondItem="oj8-p2-AzM" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="vxp-fc-wLI"/>
                         </constraints>
                     </view>

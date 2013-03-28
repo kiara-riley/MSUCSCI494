@@ -91,7 +91,7 @@
     maxval /= i;
     float avg = (maxval + minval)/2;
     avg = [self kelvToFahr:avg];
-    NSLog(@"%f", avg);
+    //NSLog(@"%f", avg);
     return avg;
 }
 
@@ -145,7 +145,7 @@
     maxval /= i;
     float avg = (maxval + minval)/2;
     avg = [self kelvToFahr:avg];
-    NSLog(@"%f", avg);
+   // NSLog(@"%f", avg);
     return avg;
     
 }

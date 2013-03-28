@@ -58,7 +58,13 @@
 
 -(void)weatherRefreshed:(NSNotification*)note {
         [midTempLabel setText:[NSString stringWithFormat:@"%f", [weather tempForDate:[NSDate dateWithTimeIntervalSinceNow:0]]]];
-    NSLog(@"%f", [weather snow]);
+    if ([weather snow] > .5) {
+        [imageView setImage:[UIImage imageNamed:@"snowing"]];
+    } else if ([weather rain] > .5) {
+        [imageView setImage:[UIImage imageNamed:@"raining"]];
+    } else {
+        [imageView setImage:[UIImage imageNamed:@"sunny"]];
+    }
 }
 
 @end
