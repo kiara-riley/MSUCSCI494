@@ -15,8 +15,21 @@ static NSString* const kServerAddress = @"https://weatherparser.herokuapp.com";
 }
 
 -(void)refreshWeather;
+-(int)numData;//returns the number of data points or 1 if no weather yet
+
+/*These all give the first(and will be default) date*/
+-(NSDate*)currentDate;//not the "current" date but the first one
 -(float)currentTemp;
--(float)tempForDate:(NSDate *)date;
+-(float)lowTemp;
+-(float)highTemp;
 -(float)snow;
 -(float)rain;
+-(float)precip;
+
+
+-(float)tempForDate:(NSDate *)date;
+-(float)snowForDate;
+-(float)rainForDate;
+
+
 @end

@@ -14,7 +14,7 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Date Label:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0H-AY-w61">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="iet-aD-o73"/>
+                                    <constraint firstAttribute="height" constant="50" id="YDW-kL-z0h"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Verdana-Bold" family="Verdana" pointSize="30"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -25,7 +25,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="32*F" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvJ-JO-8j3">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="-1*F" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gvJ-JO-8j3">
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -35,8 +35,11 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="22" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFQ-t6-VpN">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="-1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFQ-t6-VpN">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="mtx-o5-08B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -45,15 +48,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="34" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esl-vm-e0Z">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="-1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Esl-vm-e0Z">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dtC-RN-szt">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="ADF-7x-eFI"/>
-                                    <constraint firstAttribute="width" constant="128" id="sg9-jg-Vpl"/>
+                                    <constraint firstAttribute="width" constant="128" type="user" id="pEJ-wJ-Vah"/>
                                 </constraints>
                             </imageView>
                             <collectionView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="4FI-kD-XxN">
@@ -80,15 +83,24 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W67-0h-Vc4">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="RHI-JJ-qZJ"/>
+                                                        <constraint firstAttribute="height" constant="50" id="TN8-cx-9ti"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <constraints>
                                             <constraint firstItem="RrP-BO-bNs" firstAttribute="leading" secondItem="2gO-Af-1F6" secondAttribute="leading" constant="10" id="3tL-2W-MgW"/>
                                             <constraint firstItem="RrP-BO-bNs" firstAttribute="top" secondItem="2gO-Af-1F6" secondAttribute="top" constant="7" id="ell-yC-hLr"/>
+                                            <constraint firstItem="W67-0h-Vc4" firstAttribute="top" secondItem="RrP-BO-bNs" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ltH-37-VfQ"/>
+                                            <constraint firstItem="W67-0h-Vc4" firstAttribute="centerX" secondItem="2gO-Af-1F6" secondAttribute="centerX" type="default" id="niy-aY-mQ8"/>
                                         </constraints>
                                         <size key="customSize" width="100" height="100"/>
                                         <connections>
+                                            <outlet property="imageView" destination="W67-0h-Vc4" id="pHn-UL-q0E"/>
                                             <outlet property="textLabel" destination="RrP-BO-bNs" id="DiJ-94-Fgn"/>
                                         </connections>
                                     </collectionViewCell>
@@ -98,37 +110,57 @@
                                     <outlet property="delegate" destination="2" id="P8H-iX-0T1"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Precip Amount:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SLe-hm-Waa">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="-1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xD9-aA-5Ww">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="eod-lx-QIG" firstAttribute="trailing" secondItem="kFQ-t6-VpN" secondAttribute="trailing" type="default" id="BEw-Ff-rSi"/>
                             <constraint firstItem="4FI-kD-XxN" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="EDE-ZG-jIL"/>
+                            <constraint firstItem="xD9-aA-5Ww" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="EUs-Kf-JlN"/>
+                            <constraint firstItem="Esl-vm-e0Z" firstAttribute="top" secondItem="kFQ-t6-VpN" secondAttribute="top" type="default" id="Iel-l7-rQ6"/>
                             <constraint firstItem="I0H-AY-w61" firstAttribute="top" secondItem="3" secondAttribute="top" constant="20" symbolic="YES" type="default" id="JPJ-Pk-s3z"/>
-                            <constraint firstItem="kFQ-t6-VpN" firstAttribute="baseline" secondItem="eod-lx-QIG" secondAttribute="baseline" type="default" id="NQ8-Wv-oQ6"/>
+                            <constraint firstItem="kFQ-t6-VpN" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="KGU-Co-QXC"/>
+                            <constraint firstItem="xD9-aA-5Ww" firstAttribute="top" secondItem="SLe-hm-Waa" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="OFv-eT-sQT"/>
                             <constraint firstItem="oj8-p2-AzM" firstAttribute="top" secondItem="I0H-AY-w61" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ob8-B1-UFJ"/>
-                            <constraint firstItem="oj8-p2-AzM" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="PMs-td-zsg"/>
+                            <constraint firstItem="oj8-p2-AzM" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="PMs-td-zsg"/>
                             <constraint firstItem="eod-lx-QIG" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="R4f-pg-9t3"/>
                             <constraint firstItem="dtC-RN-szt" firstAttribute="top" secondItem="I0H-AY-w61" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="T5H-7N-EU1"/>
                             <constraint firstItem="gvJ-JO-8j3" firstAttribute="baseline" secondItem="oj8-p2-AzM" secondAttribute="baseline" type="default" id="TNt-ML-wsk"/>
-                            <constraint firstItem="kFQ-t6-VpN" firstAttribute="leading" secondItem="eod-lx-QIG" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="TWf-MW-NR4"/>
-                            <constraint firstItem="cry-cA-KDb" firstAttribute="leading" secondItem="kFQ-t6-VpN" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="YwY-sg-kfm"/>
+                            <constraint firstItem="SLe-hm-Waa" firstAttribute="top" secondItem="kFQ-t6-VpN" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Z8J-cb-3S9"/>
+                            <constraint firstItem="SLe-hm-Waa" firstAttribute="trailing" secondItem="xD9-aA-5Ww" secondAttribute="trailing" type="default" id="ZEz-PO-tIU"/>
                             <constraint firstItem="4FI-kD-XxN" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="ZmK-SE-pOr"/>
+                            <constraint firstItem="kFQ-t6-VpN" firstAttribute="top" secondItem="3" secondAttribute="top" constant="131" id="bbr-OY-sQw"/>
+                            <constraint firstItem="kFQ-t6-VpN" firstAttribute="baseline" secondItem="Esl-vm-e0Z" secondAttribute="baseline" type="default" id="fBO-me-bQf"/>
+                            <constraint firstItem="Esl-vm-e0Z" firstAttribute="trailing" secondItem="cry-cA-KDb" secondAttribute="trailing" type="default" id="fnD-Xt-7Pq"/>
                             <constraint firstAttribute="trailing" secondItem="I0H-AY-w61" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="hYa-un-4wl"/>
                             <constraint firstItem="eod-lx-QIG" firstAttribute="top" secondItem="oj8-p2-AzM" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ivq-0V-AIG"/>
-                            <constraint firstItem="Esl-vm-e0Z" firstAttribute="baseline" secondItem="cry-cA-KDb" secondAttribute="baseline" type="default" id="kua-PD-ja9"/>
-                            <constraint firstItem="cry-cA-KDb" firstAttribute="baseline" secondItem="kFQ-t6-VpN" secondAttribute="baseline" type="default" id="mNx-L6-1aO"/>
+                            <constraint firstItem="cry-cA-KDb" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="95" id="llo-CG-vW7"/>
+                            <constraint firstItem="eod-lx-QIG" firstAttribute="baseline" secondItem="cry-cA-KDb" secondAttribute="baseline" type="default" id="nud-B8-ZLV"/>
                             <constraint firstItem="4FI-kD-XxN" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="oeE-Rw-knT"/>
                             <constraint firstItem="I0H-AY-w61" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="oxi-WC-Voj"/>
-                            <constraint firstItem="Esl-vm-e0Z" firstAttribute="leading" secondItem="cry-cA-KDb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="tfu-bx-FbX"/>
-                            <constraint firstAttribute="trailing" secondItem="dtC-RN-szt" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="vQX-lJ-2Eo"/>
-                            <constraint firstItem="gvJ-JO-8j3" firstAttribute="leading" secondItem="oj8-p2-AzM" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="vxp-fc-wLI"/>
+                            <constraint firstItem="cry-cA-KDb" firstAttribute="leading" secondItem="Esl-vm-e0Z" secondAttribute="leading" type="default" id="th9-by-uwo"/>
+                            <constraint firstAttribute="trailing" secondItem="dtC-RN-szt" secondAttribute="trailing" constant="20" symbolic="YES" type="user" id="vQX-lJ-2Eo"/>
+                            <constraint firstItem="gvJ-JO-8j3" firstAttribute="leading" secondItem="oj8-p2-AzM" secondAttribute="trailing" constant="8" symbolic="YES" type="user" id="vxp-fc-wLI"/>
+                            <constraint firstItem="SLe-hm-Waa" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yU4-uo-XzO"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="collectionV" destination="4FI-kD-XxN" id="Txk-zm-Qxg"/>
                         <outlet property="dateLabel" destination="I0H-AY-w61" id="k4h-d0-gcg"/>
                         <outlet property="highTempLabel" destination="kFQ-t6-VpN" id="w9s-uB-M5r"/>
                         <outlet property="imageView" destination="dtC-RN-szt" id="GDx-qm-qnE"/>
                         <outlet property="lowTempLabel" destination="Esl-vm-e0Z" id="IcC-QZ-cp1"/>
                         <outlet property="midTempLabel" destination="gvJ-JO-8j3" id="eYD-dJ-bM6"/>
+                        <outlet property="precipLabel" destination="xD9-aA-5Ww" id="2e7-Kh-7aO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -139,17 +171,20 @@
         <class className="KMCollectionCell" superclassName="UICollectionViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KMCollectionCell.h"/>
             <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="textLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="KMMainVC" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/KMMainVC.h"/>
             <relationships>
+                <relationship kind="outlet" name="collectionV" candidateClass="UICollectionView"/>
                 <relationship kind="outlet" name="dateLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="highTempLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="lowTempLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="midTempLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="precipLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

@@ -10,8 +10,12 @@
 
 @interface KMCollectionCell : UICollectionViewCell {
     __weak IBOutlet UILabel *textLabel;
+    __weak IBOutlet UIImageView *imageView;
 }
 
 @property (weak, nonatomic) NSString *text;
+@property (weak, nonatomic) NSNumber *weather; //0-sunny, 1-rainy, 2-snowy
+
+
 
 @end

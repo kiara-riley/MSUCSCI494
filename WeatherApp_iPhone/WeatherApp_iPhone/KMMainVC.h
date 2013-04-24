@@ -16,9 +16,13 @@
     __weak IBOutlet UILabel *midTempLabel;
     __weak IBOutlet UILabel *highTempLabel;
     __weak IBOutlet UILabel *lowTempLabel;
+    __weak IBOutlet UILabel *precipLabel;
+    __weak IBOutlet UICollectionView *collectionV;
     KMWeather *weather;
+    NSDate *startDate; //the date returned by [weather currentDate]
 }
 
 -(void)weatherRefreshed:(NSNotification*)note;
+-(void)setCollectionValues;
 
 @end

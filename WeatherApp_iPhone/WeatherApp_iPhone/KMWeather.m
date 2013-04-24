@@ -68,6 +68,14 @@
     [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
 
 }
+-(NSDate*)currentDate {
+    NSDate *tempDate;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];
+    tempDate = [dateFormatter dateFromString:[[[[weatherData objectForKey:@"tmin2m"] objectForKey:@"values"] objectAtIndex:0] objectForKey:@"date"]];
+    return tempDate;
+}
+
 -(float)currentTemp {
     //NSInteger val = [weatherData objectAtIndex:0]
     NSArray *min = [[[[weatherData objectForKey:@"tmin2m"] objectForKey:@"values"] objectAtIndex:0] objectForKey:@"predictions"];
@@ -95,15 +103,71 @@
     return avg;
 }
 
+-(float)lowTemp {
+    //NSInteger val = [weatherData objectAtIndex:0]
+    NSArray *min = [[[[weatherData objectForKey:@"tmin2m"] objectForKey:@"values"] objectAtIndex:0] objectForKey:@"predictions"];
+    
+    /*NSLog(@"%@", min);//min
+     NSLog(@"%@", max);//max*/
+    float minval = 0.0;
+    NSInteger i = 0;
+    for (NSString *value in min) {
+        float floatVal = [value floatValue];
+        minval += floatVal;
+        i++;
+    }
+    minval /= i;
+    minval = [self kelvToFahr:minval];
+    return minval;
+}
+
+-(float)highTemp {
+    //NSInteger val = [weatherData objectAtIndex:0]
+    NSArray *max = [[[[weatherData objectForKey:@"tmax2m"] objectForKey:@"values"] objectAtIndex:0] objectForKey:@"predictions"];
+    /*NSLog(@"%@", min);//min
+     NSLog(@"%@", max);//max*/
+    float maxval = 0.0;
+    
+    int i = 0;
+    for (NSString *value in max) {
+        float floatVal = [value floatValue];
+        maxval += floatVal;
+        i++;
+    }
+    maxval /= i;
+    maxval = [self kelvToFahr:maxval];
+    return maxval;
+}
+
+-(float)precip {
+    NSArray *precip = [[[[weatherData objectForKey:@"apcpsfc"] objectForKey:@"values"] objectAtIndex:0] objectForKey:@"predictions"];
+    float avg = 0.0;
+    int i = 0;
+    for (NSString *value in precip) {
+        float floatVal = [value floatValue];
+        avg += floatVal;
+        i++;
+    }
+    avg /= i;
+    return avg;
+}
+
 -(float)tempForDate:(NSDate*)date {
+    //figure this out
     NSDate *tempDate;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];//format the date is in
     
+    
     int i = 0;
     for (NSDictionary *value in [[weatherData objectForKey:@"tmax2m"] objectForKey:@"values"]){
         tempDate = [dateFormatter dateFromString:[value objectForKey:@"date"]];
-        if ([date compare:tempDate] == NSOrderedDescending) {
+        if (DEBUG) {
+           //NSLog(@": %@", tempDate);
+        }
+        if (([date compare:tempDate] == NSOrderedAscending) || ([date compare:tempDate] == NSOrderedSame)) {
+            /*NSLog(@"worked");
+            NSLog(@"date: %@\ntemp: %@",date,tempDate);*/
             break;
         }
         i++;
@@ -176,5 +240,16 @@
     return val;
 }
 
+-(int)numData {
+    if (weatherData == nil) {
+        return 1;
+    }
+    int num = 0;
+    NSArray *rain = [[[[weatherData objectForKey:@"crainsfc"] objectForKey:@"values"] objectAtIndex:0] objectForKey:@"predictions"];
+    for (NSString *value in rain) {
+        num++;
+    }
+    return num;
+}
 
 @end
