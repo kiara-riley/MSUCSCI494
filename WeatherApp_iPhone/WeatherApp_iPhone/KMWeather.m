@@ -153,7 +153,6 @@
 }
 
 -(float)tempForDate:(NSDate*)date {
-    //figure this out
     NSDate *tempDate;
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];//format the date is in
@@ -181,8 +180,7 @@
     i = 0;
     for (NSDictionary *value in [[weatherData objectForKey:@"tmin2m"] objectForKey:@"values"]){
         tempDate = [dateFormatter dateFromString:[value objectForKey:@"date"]];
-        if ([date compare:tempDate] == NSOrderedDescending) {
-            date = tempDate;
+        if (([date compare:tempDate] == NSOrderedAscending) || ([date compare:tempDate] == NSOrderedSame)) {
             break;
         }
         i++;
@@ -214,6 +212,111 @@
     
 }
 
+-(float)snowForDate:(NSDate *)date {
+    NSDate *tempDate;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];//format the date is in
+    
+    
+    int i = 0;
+    for (NSDictionary *value in [[weatherData objectForKey:@"csnowsfc"] objectForKey:@"values"]){
+        tempDate = [dateFormatter dateFromString:[value objectForKey:@"date"]];
+        if (DEBUG) {
+            //NSLog(@": %@", tempDate);
+        }
+        if (([date compare:tempDate] == NSOrderedAscending) || ([date compare:tempDate] == NSOrderedSame)) {
+            /*NSLog(@"worked");
+             NSLog(@"date: %@\ntemp: %@",date,tempDate);*/
+            break;
+        }
+        i++;
+    }
+    if (i == [[[weatherData objectForKey:@"csnowsfc"] objectForKey:@"values"] count]) {
+        i = 0;
+    }
+    NSArray *snow = [[[[weatherData objectForKey:@"csnowsfc"] objectForKey:@"values"] objectAtIndex:i] objectForKey:@"predictions"];
+    float val = 0.0;
+    i = 0;
+    for (NSString *value in snow) {
+        float floatVal = [value floatValue];
+        val += floatVal;
+        i++;
+    }
+    val /= i;
+    return val;
+}
+
+-(float)rainForDate:(NSDate *)date {
+    NSDate *tempDate;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];//format the date is in
+    
+    
+    int i = 0;
+    for (NSDictionary *value in [[weatherData objectForKey:@"crainsfc"] objectForKey:@"values"]){
+        tempDate = [dateFormatter dateFromString:[value objectForKey:@"date"]];
+        if (DEBUG) {
+            //NSLog(@": %@", tempDate);
+        }
+        if (([date compare:tempDate] == NSOrderedAscending) || ([date compare:tempDate] == NSOrderedSame)) {
+            /*NSLog(@"worked");
+             NSLog(@"date: %@\ntemp: %@",date,tempDate);*/
+            break;
+        }
+        i++;
+    }
+    if (i == [[[weatherData objectForKey:@"crainsfc"] objectForKey:@"values"] count]) {
+        i = 0;
+    }
+    NSArray *rain = [[[[weatherData objectForKey:@"crainsfc"] objectForKey:@"values"] objectAtIndex:i] objectForKey:@"predictions"];
+    float val = 0.0;
+    i = 0;
+    for (NSString *value in rain) {
+        float floatVal = [value floatValue];
+        val += floatVal;
+        i++;
+    }
+    val /= i;
+    return val;
+    
+}
+
+-(float)cloudsForDate:(NSDate *)date {
+    NSDate *tempDate;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];//format the date is in
+    
+    
+    int i = 0;
+    for (NSDictionary *value in [[weatherData objectForKey:@"sunsdsfc"] objectForKey:@"values"]){
+        tempDate = [dateFormatter dateFromString:[value objectForKey:@"date"]];
+        if (DEBUG) {
+            //NSLog(@": %@", tempDate);
+        }
+        if (([date compare:tempDate] == NSOrderedAscending) || ([date compare:tempDate] == NSOrderedSame)) {
+            /*NSLog(@"worked");
+             NSLog(@"date: %@\ntemp: %@",date,tempDate);*/
+            break;
+        }
+        i++;
+    }
+    if (i == [[[weatherData objectForKey:@"sunsdsfc"] objectForKey:@"values"] count]) {
+        i = 0;
+    }
+
+    NSArray *clouds = [[[[weatherData objectForKey:@"sunsdsfc"] objectForKey:@"values"] objectAtIndex:i] objectForKey:@"predictions"];
+    float val = 0.0;
+    i = 0;
+    for (NSString *value in clouds) {
+        float floatVal = [value floatValue];
+        val += floatVal;
+        i++;
+    }
+    val /= i;
+    val /= 21600;
+    return val;
+}
+
 -(float)snow {
     NSArray *snow = [[[[weatherData objectForKey:@"csnowsfc"] objectForKey:@"values"] objectAtIndex:0] objectForKey:@"predictions"];
     float val = 0.0;
@@ -240,6 +343,20 @@
     return val;
 }
 
+-(float)clouds {
+    NSArray *clouds = [[[[weatherData objectForKey:@"sunsdsfc"] objectForKey:@"values"] objectAtIndex:0] objectForKey:@"predictions"];
+    float val = 0.0;
+    NSInteger i = 0;
+    for (NSString *value in clouds) {
+        float floatVal = [value floatValue];
+        val += floatVal;
+        i++;
+    }
+    val /= i;
+    val /= 21600;
+    return val;
+}
+
 -(int)numData {
     if (weatherData == nil) {
         return 1;
@@ -250,6 +367,21 @@
         num++;
     }
     return num;
+}
+
+-(int)weatherNow {
+    return [self weatherForDate:[self currentDate]];
+}
+-(int)weatherForDate:(NSDate*)date { //returns, 0-sunny,1-rainy,2-snowy,3-cloudy
+    if ([self snowForDate:date] > .5) {
+        return 2;
+    } else if ([self rainForDate:date] > .5) {
+        return 1;
+    } else if ([self cloudsForDate:date] > .5) {
+        return 3;
+    } else {
+        return 0;
+    }
 }
 
 @end

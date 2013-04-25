@@ -43,11 +43,6 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    /*todo-
-     -Need a global date(for speed) that is the "current" date
-     make a multiplier based on index path, and create a date mult*6hours ahead of global date
-     get sunshine for date and set it
-     */
     int multiplier = indexPath.row;
     NSDate *date = [NSDate dateWithTimeInterval:21600*multiplier sinceDate:startDate];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -57,7 +52,7 @@
     [cell setBounds:CGRectMake(0, 0, 100, 100)];
     [cell setBackgroundColor:[UIColor grayColor]];
     [cell setText:[dateFormatter stringFromDate:date]];
-    [cell setWeather:[NSNumber numberWithInt:2]];
+    [cell setWeather:[NSNumber numberWithInt:[weather weatherForDate:date]]];
     return cell;
 }
 
@@ -74,6 +69,8 @@
     if (DEBUG) {
         NSLog(@"Rain: %f", [weather rain]);
         NSLog(@"snow: %f", [weather snow]);
+        
+        NSLog(@"clouds now: %f", [weather clouds]);
     }
     if ([weather snow] > .5) {
         [imageView setImage:[UIImage imageNamed:@"snowing"]];
