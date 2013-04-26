@@ -58,8 +58,26 @@
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    [[collectionView cellForItemAtIndexPath:indexPath] setBackgroundColor:[UIColor redColor]];
     
+    NSInteger multiplier = indexPath.row;
+    [midTempLabel setText:[NSString stringWithFormat:@"%3.0f*F", [weather tempForDate:[NSDate dateWithTimeInterval:21600*multiplier sinceDate:startDate]]]];
+    [lowTempLabel setText:[NSString stringWithFormat:@"%2.0f", [weather lowTemp]]];
+    [highTempLabel setText:[NSString stringWithFormat:@"%2.0f", [weather highTemp]]];
+    
+    if ([weather snowForDate:[NSDate dateWithTimeInterval:21600*multiplier sinceDate:startDate]] > .5) { //clean this up
+        [imageView setImage:[UIImage imageNamed:@"snowing"]];
+    } else if ([weather rainForDate:[NSDate dateWithTimeInterval:21600*multiplier sinceDate:startDate]] > .5) {
+        [imageView setImage:[UIImage imageNamed:@"raining"]];
+    } else {
+        [imageView setImage:[UIImage imageNamed:@"sunny"]];
+    }
+
+    precipLabel.text = [NSString stringWithFormat:@"%.2f",[weather precip]];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MM/dd 'at' HH"];
+    NSString *dispDate = [dateFormatter stringFromDate:[NSDate dateWithTimeInterval:21600*multiplier sinceDate:startDate]];
+    dateLabel.text = dispDate;
 }
 
 -(void)weatherRefreshed:(NSNotification*)note {
