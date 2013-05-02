@@ -357,6 +357,112 @@
     return val;
 }
 
+-(float)precipForDate:(NSDate*)date {
+    NSDate *tempDate;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];//format the date is in
+    
+    
+    int i = 0;
+    for (NSDictionary *value in [[weatherData objectForKey:@"apcpsfc"] objectForKey:@"values"]){
+        tempDate = [dateFormatter dateFromString:[value objectForKey:@"date"]];
+        if (DEBUG) {
+            //NSLog(@": %@", tempDate);
+        }
+        if (([date compare:tempDate] == NSOrderedAscending) || ([date compare:tempDate] == NSOrderedSame)) {
+            /*NSLog(@"worked");
+             NSLog(@"date: %@\ntemp: %@",date,tempDate);*/
+            break;
+        }
+        i++;
+    }
+    if (i == [[[weatherData objectForKey:@"apcpsfc"] objectForKey:@"values"] count]) {
+        i = 0;
+    }
+    
+    NSArray *clouds = [[[[weatherData objectForKey:@"apcpsfc"] objectForKey:@"values"] objectAtIndex:i] objectForKey:@"predictions"];
+    float val = 0.0;
+    i = 0;
+    for (NSString *value in clouds) {
+        float floatVal = [value floatValue];
+        val += floatVal;
+        i++;
+    }
+    val /= i;
+    return val;
+}
+
+-(float)highForDate:(NSDate*)date {
+    NSDate *tempDate;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];//format the date is in
+    
+    
+    int i = 0;
+    for (NSDictionary *value in [[weatherData objectForKey:@"tmax2m"] objectForKey:@"values"]){
+        tempDate = [dateFormatter dateFromString:[value objectForKey:@"date"]];
+        if (DEBUG) {
+            //NSLog(@": %@", tempDate);
+        }
+        if (([date compare:tempDate] == NSOrderedAscending) || ([date compare:tempDate] == NSOrderedSame)) {
+            /*NSLog(@"worked");
+             NSLog(@"date: %@\ntemp: %@",date,tempDate);*/
+            break;
+        }
+        i++;
+    }
+    if (i == [[[weatherData objectForKey:@"tmax2m"] objectForKey:@"values"] count]) {
+        i = 0;
+    }
+    NSArray *snow = [[[[weatherData objectForKey:@"tmax2m"] objectForKey:@"values"] objectAtIndex:i] objectForKey:@"predictions"];
+    float val = 0.0;
+    i = 0;
+    for (NSString *value in snow) {
+        float floatVal = [value floatValue];
+        val += floatVal;
+        i++;
+    }
+    val /= i;
+    val = [self kelvToFahr:val];
+    return val;
+}
+
+-(float)lowForDate:(NSDate*)date {
+    NSDate *tempDate;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"];//format the date is in
+    
+    
+    int i = 0;
+    for (NSDictionary *value in [[weatherData objectForKey:@"tmin2m"] objectForKey:@"values"]){
+        tempDate = [dateFormatter dateFromString:[value objectForKey:@"date"]];
+        if (DEBUG) {
+            //NSLog(@": %@", tempDate);
+        }
+        if (([date compare:tempDate] == NSOrderedAscending) || ([date compare:tempDate] == NSOrderedSame)) {
+            /*NSLog(@"worked");
+             NSLog(@"date: %@\ntemp: %@",date,tempDate);*/
+            break;
+        }
+        i++;
+    }
+    if (i == [[[weatherData objectForKey:@"tmin2m"] objectForKey:@"values"] count]) {
+        i = 0;
+    }
+    NSArray *snow = [[[[weatherData objectForKey:@"tmin2m"] objectForKey:@"values"] objectAtIndex:i] objectForKey:@"predictions"];
+    float val = 0.0;
+    i = 0;
+    for (NSString *value in snow) {
+        float floatVal = [value floatValue];
+        val += floatVal;
+        i++;
+    }
+    val /= i;
+    val = [self kelvToFahr:val];
+    return val;
+
+}
+
 -(int)numData {
     if (weatherData == nil) {
         return 1;
@@ -366,22 +472,29 @@
     for (NSString *value in rain) {
         num++;
     }
-    return num;
+    return num/2;
 }
 
 -(int)weatherNow {
     return [self weatherForDate:[self currentDate]];
 }
--(int)weatherForDate:(NSDate*)date { //returns, 0-sunny,1-rainy,2-snowy,3-cloudy
+-(int)weatherForDate:(NSDate*)date { //returns, 0-sunny,1-rainy,2-snowy,3-partlycloudy, 4-cloudy, 5-night
+    
+
     if ([self snowForDate:date] > .5) {
         return 2;
     } else if ([self rainForDate:date] > .5) {
         return 1;
-    } else if ([self cloudsForDate:date] > .5) {
+    } else if ([self cloudsForDate:date] > .66) {
+        return 4;
+    } else if ([self cloudsForDate:date] > .33) {
         return 3;
+    } else if (((int)[date timeIntervalSinceDate:[self currentDate]]/21600)%4==2) {
+        return 5;
     } else {
-        return 0;
+        return  0;
     }
+    
 }
 
 @end

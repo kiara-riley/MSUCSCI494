@@ -14,7 +14,7 @@
 }
 
 @property (weak, nonatomic) NSString *text;
-@property (weak, nonatomic) NSNumber *weather; //0-sunny, 1-rainy, 2-snowy
+@property (weak, nonatomic) NSNumber *weather; //0-sunny, 1-rainy, 2-snowy, 3-partlycloudy, 4-cloudy, 5-night
 
 
 

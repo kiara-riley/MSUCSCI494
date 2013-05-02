@@ -43,85 +43,89 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    int multiplier = indexPath.row;
-    NSDate *date = [NSDate dateWithTimeInterval:21600*multiplier sinceDate:startDate];
+    int multiplierTemp = indexPath.row*2;
+    NSDate *date = [NSDate dateWithTimeInterval:21600*multiplierTemp sinceDate:startDate];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM/dd 'at' HH"];
+    NSString *string;
+    if ((multiplierTemp%4)==0) {
+        string = [NSString stringWithFormat:@"ccc 'Day'"];
+    } else {
+        string = [NSString stringWithFormat:@"ccc 'Night'"];
+    }
+    [dateFormatter setDateFormat:string];
     
     KMCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     [cell setBounds:CGRectMake(0, 0, 100, 100)];
     [cell setBackgroundColor:[UIColor grayColor]];
-    [cell setText:[dateFormatter stringFromDate:date]];
     [cell setWeather:[NSNumber numberWithInt:[weather weatherForDate:date]]];
+    
+    [cell setText:[dateFormatter stringFromDate:[NSDate dateWithTimeInterval:(60*60*-7) sinceDate:date]]];
     return cell;
 }
 
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     
+    multiplier = indexPath.row*2;
     
-    NSInteger multiplier = indexPath.row;
-    [midTempLabel setText:[NSString stringWithFormat:@"%3.0f*F", [weather tempForDate:[NSDate dateWithTimeInterval:21600*multiplier sinceDate:startDate]]]];
-    [lowTempLabel setText:[NSString stringWithFormat:@"%2.0f", [weather lowTemp]]];
-    [highTempLabel setText:[NSString stringWithFormat:@"%2.0f", [weather highTemp]]];
-    
-    if ([weather snowForDate:[NSDate dateWithTimeInterval:21600*multiplier sinceDate:startDate]] > .5) { //clean this up
-        [imageView setImage:[UIImage imageNamed:@"snowing"]];
-    } else if ([weather rainForDate:[NSDate dateWithTimeInterval:21600*multiplier sinceDate:startDate]] > .5) {
-        [imageView setImage:[UIImage imageNamed:@"raining"]];
-    } else {
-        [imageView setImage:[UIImage imageNamed:@"sunny"]];
-    }
-
-    precipLabel.text = [NSString stringWithFormat:@"%.2f",[weather precip]];
-    
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM/dd 'at' HH"];
-    NSString *dispDate = [dateFormatter stringFromDate:[NSDate dateWithTimeInterval:21600*multiplier sinceDate:startDate]];
-    dateLabel.text = dispDate;
+    [self setWeatherValues];
 }
 
 -(void)weatherRefreshed:(NSNotification*)note {
-    [midTempLabel setText:[NSString stringWithFormat:@"%3.0f*F", [weather tempForDate:[NSDate dateWithTimeIntervalSinceNow:0]]]];
-    [lowTempLabel setText:[NSString stringWithFormat:@"%2.0f", [weather lowTemp]]];
-    [highTempLabel setText:[NSString stringWithFormat:@"%2.0f", [weather highTemp]]];
+    
     if (DEBUG) {
-        NSLog(@"Rain: %f", [weather rain]);
-        NSLog(@"snow: %f", [weather snow]);
         
-        NSLog(@"clouds now: %f", [weather clouds]);
+        /*NSLog(@"now: %f", [weather lowTemp]);
+        NSLog(@"nowish: %f", [weather lowForDate:[weather currentDate]]);
+        NSLog(@"in 6: %f", [weather lowForDate:[NSDate dateWithTimeInterval:21600 sinceDate:[weather currentDate]]]);*/
     }
-    if ([weather snow] > .5) {
-        [imageView setImage:[UIImage imageNamed:@"snowing"]];
-    } else if ([weather rain] > .5) {
-        [imageView setImage:[UIImage imageNamed:@"raining"]];
-    } else {
-        [imageView setImage:[UIImage imageNamed:@"sunny"]];
-    }
+        
     
-    NSDate *temp = [weather currentDate];
-    temp = [NSDate dateWithTimeInterval:21600.0 sinceDate:temp];
-    NSLog(@"Mid: %f", [weather currentTemp]);
-    NSLog(@"%f", [weather tempForDate:[NSDate dateWithTimeIntervalSinceNow:0]]);
-    NSLog(@"%f", [weather tempForDate:temp]);
-    NSLog(@"%@", [weather currentDate]);
-    NSLog(@"%@", temp);
-    NSLog(@"Precip: %f", [weather precip]);
-    
-    precipLabel.text = [NSString stringWithFormat:@"%.2f",[weather precip]];
-    
-    NSDate *currentDate = [weather currentDate];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MM/dd 'at' HH"];
-    NSString *dispDate = [dateFormatter stringFromDate:currentDate];
-    dateLabel.text = dispDate;
     
     [self setCollectionValues];
     
     startDate = [weather currentDate];
+    
+    multiplier = 0;
+    [self setWeatherValues];
 }
 
 -(void)setCollectionValues {
     [collectionV reloadData];
+}
+
+-(void)setWeatherValues {
+    
+    NSDate *tempDate = [NSDate dateWithTimeInterval:21600*multiplier sinceDate:startDate];
+    
+    [midTempLabel setText:[NSString stringWithFormat:@"%3.0f*F", [weather tempForDate:tempDate]]];
+    [lowTempLabel setText:[NSString stringWithFormat:@"%2.0f", [weather lowForDate:tempDate]]];
+    [highTempLabel setText:[NSString stringWithFormat:@"%2.0f", [weather highForDate:tempDate]]];
+    
+    
+    if ([weather snowForDate:tempDate] > .5) { //clean this up
+        [imageView setImage:[UIImage imageNamed:@"snow"]];
+    } else if ([weather rainForDate:tempDate] > .5) {
+        [imageView setImage:[UIImage imageNamed:@"raining"]];
+    } else if ([weather cloudsForDate:tempDate] > .66) {
+        [imageView setImage:[UIImage imageNamed:@"cloudy"]];
+    } else if ([weather cloudsForDate:tempDate] > .33) {
+        [imageView setImage:[UIImage imageNamed:@"partlycloudy"]];
+    } else if (multiplier%4==2) {
+        [imageView setImage:[UIImage imageNamed:@"night"]];
+    } else {
+        [imageView setImage:[UIImage imageNamed:@"sunny"]];
+    }
+    
+    precipLabel.text = [NSString stringWithFormat:@"%.2f",[weather precipForDate:tempDate]];
+    
+    tempDate = [NSDate dateWithTimeInterval:(60*60*-7) sinceDate:tempDate];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"MMM dd 'at' HH:00"];
+    NSString *dispDate = [dateFormatter stringFromDate:tempDate];
+    dateLabel.text = dispDate;
+
+    
 }
 
 @end

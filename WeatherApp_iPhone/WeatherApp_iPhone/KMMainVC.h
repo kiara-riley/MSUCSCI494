@@ -20,9 +20,11 @@
     __weak IBOutlet UICollectionView *collectionV;
     KMWeather *weather;
     NSDate *startDate; //the date returned by [weather currentDate]
+    NSInteger multiplier; //current 6 hour multiplier to use
 }
 
 -(void)weatherRefreshed:(NSNotification*)note;
 -(void)setCollectionValues;
+-(void)setWeatherValues;
 
 @end
