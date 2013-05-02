@@ -18,6 +18,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
+        
     }
     return self;
 }
@@ -30,7 +31,7 @@
 -(void)setWeather:(NSNumber *)weather {
     _weather = weather;
     
-    if ([weather integerValue] == 2) { //clean this up
+    if ([weather integerValue] == 2) { 
         [imageView setImage:[UIImage imageNamed:@"snow"]];
     } else if ([weather integerValue] == 1) {
         [imageView setImage:[UIImage imageNamed:@"raining"]];
@@ -44,8 +45,7 @@
         [imageView setImage:[UIImage imageNamed:@"sunny"]];
     }
     
-    self.layer.borderColor = [[UIColor darkGrayColor] CGColor];
-    self.layer.borderWidth = 1.0f;
+    
     
 }
 

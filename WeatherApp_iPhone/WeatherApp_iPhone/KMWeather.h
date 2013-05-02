@@ -38,7 +38,7 @@ static NSString* const kServerAddress = @"https://weatherparser.herokuapp.com";
 
 
 -(int)weatherNow;//calls weatherForDate:[self currentDate]
--(int)weatherForDate:(NSDate*)date;//returns, 0-sunny,1-rainy,2-snowy,3-cloudy
+-(int)weatherForDate:(NSDate*)date;//returns, 0-sunny,1-rainy,2-snowy,3-partlycloudy, 4-cloudy, 5-night
 
 
 @end

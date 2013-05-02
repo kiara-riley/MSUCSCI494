@@ -78,7 +78,7 @@
     return tempDate;
 }
 
--(float)currentTemp {
+-(float)currentTemp { //averages max and min temps
     //NSInteger val = [weatherData objectAtIndex:0]
     NSArray *min = [[[[weatherData objectForKey:@"tmin2m"] objectForKey:@"values"] objectAtIndex:0] objectForKey:@"predictions"];
     NSArray *max = [[[[weatherData objectForKey:@"tmax2m"] objectForKey:@"values"] objectAtIndex:0] objectForKey:@"predictions"];
@@ -465,7 +465,7 @@
 
 }
 
--(int)numData {
+-(int)numData { //gives the number of data points/2 for the collection view
     if (weatherData == nil) {
         return 0;
     }

@@ -26,7 +26,7 @@
     UIImage *sun = [UIImage imageNamed:@"sunny"];
     [imageView setImage:sun];
     [dateLabel setText:@"Loading Weather Data"];
-    [midTempLabel setText:@""];
+    [midTempLabel setText:@""]; //startup, we dont want these labels displayed
     [lowTempLabel setText:@""];
     [highTempLabel setText:@""];
     [precipLabel setText:@""];
@@ -50,7 +50,7 @@
 }
 
 -(UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    int multiplierTemp = indexPath.row*2;
+    int multiplierTemp = indexPath.row*2; //skipping half of the data points to grab just day and night
     NSDate *date = [NSDate dateWithTimeInterval:21600*multiplierTemp sinceDate:startDate];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     NSString *string;
@@ -66,7 +66,10 @@
     [cell setBackgroundColor:[UIColor lightGrayColor]];
     [cell setWeather:[NSNumber numberWithInt:[weather weatherForDate:date]]];
     
-    [cell setText:[dateFormatter stringFromDate:[NSDate dateWithTimeInterval:(60*60*-7) sinceDate:date]]];
+    [cell setText:[dateFormatter stringFromDate:[NSDate dateWithTimeInterval:(60*60*-7) sinceDate:date]]]; //-7 hours give correct bozeman time
+    
+    cell.layer.borderColor = [[UIColor darkGrayColor] CGColor];
+    cell.layer.borderWidth = 1.0f;
     return cell;
 }
 
@@ -74,7 +77,7 @@
     
     multiplier = indexPath.row*2;
     
-    [self setWeatherValues];
+    [self setWeatherValues]; 
 }
 
 -(void)weatherRefreshed:(NSNotification*)note {
@@ -103,7 +106,7 @@
     [collectionV reloadData];
 }
 
--(void)setWeatherValues {
+-(void)setWeatherValues { //set the labels and imageview to the currently selected element
     
     NSDate *tempDate = [NSDate dateWithTimeInterval:21600*multiplier sinceDate:startDate];
     
@@ -112,7 +115,7 @@
     [highTempLabel setText:[NSString stringWithFormat:@"%2.0f", [weather highForDate:tempDate]]];
     
     
-    if ([weather snowForDate:tempDate] > .5) { //clean this up
+    if ([weather snowForDate:tempDate] > .5) {
         [imageView setImage:[UIImage imageNamed:@"snow"]];
     } else if ([weather rainForDate:tempDate] > .5) {
         [imageView setImage:[UIImage imageNamed:@"raining"]];
@@ -140,8 +143,6 @@
     [dateFormatter setDateFormat:string];
     NSString *dispDate = [dateFormatter stringFromDate:tempDate];
     dateLabel.text = dispDate;
-
-    //[self applyShinyBackground];
 }
 
 - (void)applyShinyBackground {

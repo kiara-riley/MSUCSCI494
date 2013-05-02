@@ -17,12 +17,14 @@
     __weak IBOutlet UILabel *highTempLabel;
     __weak IBOutlet UILabel *lowTempLabel;
     __weak IBOutlet UILabel *precipLabel;
+    
+    //these are the static text labels so I can make them "disappear" on startup
     __weak IBOutlet UILabel *temperatureLabel;
     __weak IBOutlet UILabel *precipitationLabel;
     __weak IBOutlet UILabel *hLabel;
     __weak IBOutlet UILabel *lLabel;
     __weak IBOutlet UICollectionView *collectionV;
-    KMWeather *weather;
+    KMWeather *weather; //weather object
     NSDate *startDate; //the date returned by [weather currentDate]
     NSInteger multiplier; //current 6 hour multiplier to use
 }
@@ -31,6 +33,6 @@
 -(void)setCollectionValues;
 -(void)setWeatherValues;
 
-- (void)applyShinyBackground;
+- (void)applyShinyBackground; //gives a gradient to the background
 
 @end
