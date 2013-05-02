@@ -17,6 +17,10 @@
     __weak IBOutlet UILabel *highTempLabel;
     __weak IBOutlet UILabel *lowTempLabel;
     __weak IBOutlet UILabel *precipLabel;
+    __weak IBOutlet UILabel *temperatureLabel;
+    __weak IBOutlet UILabel *precipitationLabel;
+    __weak IBOutlet UILabel *hLabel;
+    __weak IBOutlet UILabel *lLabel;
     __weak IBOutlet UICollectionView *collectionV;
     KMWeather *weather;
     NSDate *startDate; //the date returned by [weather currentDate]

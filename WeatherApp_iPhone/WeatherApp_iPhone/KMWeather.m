@@ -467,7 +467,7 @@
 
 -(int)numData {
     if (weatherData == nil) {
-        return 1;
+        return 0;
     }
     int num = 0;
     NSArray *rain = [[[[weatherData objectForKey:@"crainsfc"] objectForKey:@"values"] objectAtIndex:0] objectForKey:@"predictions"];

@@ -22,12 +22,18 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    UIImage *sun = [UIImage imageNamed:@"sun.jpg"];
+    [self applyShinyBackground];
+    UIImage *sun = [UIImage imageNamed:@"sunny"];
     [imageView setImage:sun];
-    [dateLabel setText:@"Today"];
-    [midTempLabel setText:@"-1*F"];
-    [lowTempLabel setText:@"-1"];
-    [highTempLabel setText:@"-1"];
+    [dateLabel setText:@"Loading Weather Data"];
+    [midTempLabel setText:@""];
+    [lowTempLabel setText:@""];
+    [highTempLabel setText:@""];
+    [precipLabel setText:@""];
+    [precipitationLabel setText:@""];
+    [temperatureLabel setText:@""];
+    [hLabel setText:@""];
+    [lLabel setText:@""];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(weatherRefreshed:) name:@"weatherRefreshed" object:nil];
     weather = [[KMWeather alloc] init];
@@ -80,7 +86,10 @@
         NSLog(@"in 6: %f", [weather lowForDate:[NSDate dateWithTimeInterval:21600 sinceDate:[weather currentDate]]]);*/
     }
         
-    
+    [precipitationLabel setText:@"Precipitation:"];
+    [temperatureLabel setText:@"Temperature:"];
+    [hLabel setText:@"H:"];
+    [lLabel setText:@"L:"];
     
     [self setCollectionValues];
     
@@ -98,7 +107,7 @@
     
     NSDate *tempDate = [NSDate dateWithTimeInterval:21600*multiplier sinceDate:startDate];
     
-    [midTempLabel setText:[NSString stringWithFormat:@"%3.0f*F", [weather tempForDate:tempDate]]];
+    [midTempLabel setText:[NSString stringWithFormat:@"%3.0f°F", [weather tempForDate:tempDate]]];
     [lowTempLabel setText:[NSString stringWithFormat:@"%2.0f", [weather lowForDate:tempDate]]];
     [highTempLabel setText:[NSString stringWithFormat:@"%2.0f", [weather highForDate:tempDate]]];
     
@@ -117,19 +126,26 @@
         [imageView setImage:[UIImage imageNamed:@"sunny"]];
     }
     
-    precipLabel.text = [NSString stringWithFormat:@"%.2f",[weather precipForDate:tempDate]];
+    precipLabel.text = [NSString stringWithFormat:@"%.2f mm",[weather precipForDate:tempDate]];
     
     tempDate = [NSDate dateWithTimeInterval:(60*60*-7) sinceDate:tempDate];
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"MMM dd 'at' HH:00"];
+    NSString *string;
+    if ((multiplier%4)==0) {
+        string = [NSString stringWithFormat:@"ccc MMM dd 'Daytime'"];
+    } else {
+        string = [NSString stringWithFormat:@"ccc MMM dd 'Nighttime'"];
+    }
+    [dateFormatter setDateFormat:string];
     NSString *dispDate = [dateFormatter stringFromDate:tempDate];
     dateLabel.text = dispDate;
 
-    [self applyShinyBackground];
+    //[self applyShinyBackground];
 }
 
 - (void)applyShinyBackground {
+    //method modified from:
     //http://coffeeshopped.com/2010/10/uiview-how-to-make-shiny-backgrounds-and-other-reusable-styles
     // create a CAGradientLayer to draw the gradient on
     CAGradientLayer *layer = [CAGradientLayer layer];
@@ -166,19 +182,7 @@
     [self.view.layer insertSublayer:layer atIndex:0];
 }
 
--(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
-    if (fromInterfaceOrientation == UIInterfaceOrientationPortrait) {
-        
-    } else {
-        
-    }
-}
 
-- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
-{
-    // resize your layers based on the view’s new bounds
-    [[[self.view.layer sublayers] objectAtIndex:0] setFrame:self.view.bounds];
-}
 
 
 @end
