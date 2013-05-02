@@ -29,13 +29,6 @@
 
 -(void)setWeather:(NSNumber *)weather {
     _weather = weather;
-    if ([weather integerValue] == 2) {
-        [imageView setImage:[UIImage imageNamed:@"snow"]];
-    } else if ([weather integerValue] == 1) {
-        [imageView setImage:[UIImage imageNamed:@"raining"]];
-    } else {
-        [imageView setImage:[UIImage imageNamed:@"sunny"]];
-    }
     
     if ([weather integerValue] == 2) { //clean this up
         [imageView setImage:[UIImage imageNamed:@"snow"]];
@@ -51,7 +44,12 @@
         [imageView setImage:[UIImage imageNamed:@"sunny"]];
     }
     
+    self.layer.borderColor = [[UIColor darkGrayColor] CGColor];
+    self.layer.borderWidth = 1.0f;
+    
 }
+
+
 
 
 /*

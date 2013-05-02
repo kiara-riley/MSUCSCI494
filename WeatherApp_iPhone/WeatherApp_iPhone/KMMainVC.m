@@ -9,6 +9,7 @@
 #import "KMMainVC.h"
 #import "KMCollectionCell.h"
 #import "KMWeather.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface KMMainVC ()
 
@@ -56,7 +57,7 @@
     
     KMCollectionCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     [cell setBounds:CGRectMake(0, 0, 100, 100)];
-    [cell setBackgroundColor:[UIColor grayColor]];
+    [cell setBackgroundColor:[UIColor lightGrayColor]];
     [cell setWeather:[NSNumber numberWithInt:[weather weatherForDate:date]]];
     
     [cell setText:[dateFormatter stringFromDate:[NSDate dateWithTimeInterval:(60*60*-7) sinceDate:date]]];
@@ -125,7 +126,59 @@
     NSString *dispDate = [dateFormatter stringFromDate:tempDate];
     dateLabel.text = dispDate;
 
-    
+    [self applyShinyBackground];
 }
+
+- (void)applyShinyBackground {
+    //http://coffeeshopped.com/2010/10/uiview-how-to-make-shiny-backgrounds-and-other-reusable-styles
+    // create a CAGradientLayer to draw the gradient on
+    CAGradientLayer *layer = [CAGradientLayer layer];
+    
+    // get the RGB components of the color
+    
+    
+    // create the colors for our gradient based on the color passed in
+    layer.colors = [NSArray arrayWithObjects:
+                    (id)[[UIColor whiteColor] CGColor],
+                    (id)[[UIColor colorWithRed:.95
+                                         green:.95
+                                          blue:.95
+                                         alpha:1] CGColor],
+                    (id)[[UIColor colorWithRed:.85
+                                         green:.85
+                                          blue:.85
+                                         alpha:1] CGColor],
+                    (id)[[UIColor colorWithRed:.8
+                                         green:.8
+                                          blue:.8
+                                         alpha:1] CGColor],
+                    nil];
+    
+    // create the color stops for our gradient
+    layer.locations = [NSArray arrayWithObjects:
+                       [NSNumber numberWithFloat:0.0f],
+                       [NSNumber numberWithFloat:0.25f],
+                       [NSNumber numberWithFloat:0.51f],
+                       [NSNumber numberWithFloat:1.0f],
+                       nil];
+    
+    layer.frame = self.view.bounds;
+    [self.view.layer insertSublayer:layer atIndex:0];
+}
+
+-(void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation {
+    if (fromInterfaceOrientation == UIInterfaceOrientationPortrait) {
+        
+    } else {
+        
+    }
+}
+
+- (void)willAnimateRotationToInterfaceOrientation:(UIInterfaceOrientation)toInterfaceOrientation duration:(NSTimeInterval)duration
+{
+    // resize your layers based on the view’s new bounds
+    [[[self.view.layer sublayers] objectAtIndex:0] setFrame:self.view.bounds];
+}
+
 
 @end

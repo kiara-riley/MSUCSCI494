@@ -27,4 +27,6 @@
 -(void)setCollectionValues;
 -(void)setWeatherValues;
 
+- (void)applyShinyBackground;
+
 @end

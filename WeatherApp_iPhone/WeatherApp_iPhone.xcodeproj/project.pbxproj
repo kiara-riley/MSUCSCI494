@@ -22,6 +22,7 @@
 		4C786C0D1731DC3700CAAA64 /* snow.xcf in Resources */ = {isa = PBXBuildFile; fileRef = 4C786C011731DC3700CAAA64 /* snow.xcf */; };
 		4C786C0E1731DC3700CAAA64 /* sunny.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C786C021731DC3700CAAA64 /* sunny.png */; };
 		4C786C0F1731DC3700CAAA64 /* sunny.xcf in Resources */ = {isa = PBXBuildFile; fileRef = 4C786C031731DC3700CAAA64 /* sunny.xcf */; };
+		4C786C1117320FA700CAAA64 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C786C1017320FA700CAAA64 /* QuartzCore.framework */; };
 		4CD11A4A16F7A15000FC5FB4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD11A4916F7A15000FC5FB4 /* UIKit.framework */; };
 		4CD11A4C16F7A15000FC5FB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD11A4B16F7A15000FC5FB4 /* Foundation.framework */; };
 		4CD11A4E16F7A15000FC5FB4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CD11A4D16F7A15000FC5FB4 /* CoreGraphics.framework */; };
@@ -66,6 +67,7 @@
 		4C786C011731DC3700CAAA64 /* snow.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; path = snow.xcf; sourceTree = "<group>"; };
 		4C786C021731DC3700CAAA64 /* sunny.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sunny.png; sourceTree = "<group>"; };
 		4C786C031731DC3700CAAA64 /* sunny.xcf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sunny.xcf; sourceTree = "<group>"; };
+		4C786C1017320FA700CAAA64 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		4CD11A4616F7A15000FC5FB4 /* WeatherApp_iPhone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherApp_iPhone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CD11A4916F7A15000FC5FB4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		4CD11A4B16F7A15000FC5FB4 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -97,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C786C1117320FA700CAAA64 /* QuartzCore.framework in Frameworks */,
 				4CD11A4A16F7A15000FC5FB4 /* UIKit.framework in Frameworks */,
 				4CD11A4C16F7A15000FC5FB4 /* Foundation.framework in Frameworks */,
 				4CD11A4E16F7A15000FC5FB4 /* CoreGraphics.framework in Frameworks */,
@@ -138,6 +141,7 @@
 		4CD11A3D16F7A15000FC5FB4 = {
 			isa = PBXGroup;
 			children = (
+				4C786C1017320FA700CAAA64 /* QuartzCore.framework */,
 				4CD11A4F16F7A15000FC5FB4 /* WeatherApp_iPhone */,
 				4CD11A7316F7A15000FC5FB4 /* WeatherApp_iPhoneTests */,
 				4CD11A4816F7A15000FC5FB4 /* Frameworks */,
