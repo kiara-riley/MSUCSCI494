@@ -6,6 +6,11 @@
 //  Copyright (c) 2013 Kraig McKernan. All rights reserved.
 //
 
+// Good job with the graphics and controls. Too bad you didn't get a chance to display
+// some of the weather uncertainty that only we have!
+// Project grade: 95%
+// Course grade: 96%
+
 #import "KMMainVC.h"
 #import "KMCollectionCell.h"
 #import "KMWeather.h"
